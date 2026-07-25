@@ -7,8 +7,8 @@ override_dh_usrlocal:
 override_dh_dwz:
 
 execute_before_dh_auto_build:
-	go build -mod=vendor -o _build/fanctld ./cmd/fanctld
-	go build -mod=vendor -o _build/fanctl ./cmd/fanctl
+	go build -o _build/fanctld ./cmd/fanctld
+	go build -o _build/fanctl ./cmd/fanctl
 
 execute_after_dh_install:
 	mkdir -p debian/fanctl/etc/fanctl
