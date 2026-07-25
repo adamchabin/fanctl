@@ -1,0 +1,38 @@
+name: Build and Release DEB
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  build-deb:
+    runs-on: ubuntu-latest
+    container:
+      image: debian:trixie
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install build dependencies
+        run: |
+          apt-get update
+          apt-get install -y debhelper dpkg-dev golang-any git
+
+      - name: Build Debian package
+        run: |
+          dpkg-buildpackage -us -uc -b
+
+      - name: Upload binaries to release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            ../fanctl_*.deb
+            ../fanctl_*.buildinfo
+            ../fanctl_*.changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
