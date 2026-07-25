@@ -1,0 +1,14 @@
+[Unit]
+Description=Fan Control Daemon (fanctld)
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/etc/fanctl
+ExecStart=/usr/local/bin/fanctld /etc/fanctl/fanctl.conf
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=on-failure
+User=root
+
+[Install]
+WantedBy=multi-user.target

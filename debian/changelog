@@ -1,0 +1,5 @@
+fanctl (0.14.0-1) unstable; urgency=medium
+
+  * Release version v14 with client-server architecture, API sync, and debian build scripts.
+
+ -- Adam Chabin <adam@chabin.eu>  Sat, 25 Jul 2026 12:00:00 +0200

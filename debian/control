@@ -1,0 +1,20 @@
+Source: fanctl
+Section: admin
+Priority: optional
+Maintainer: Adam Chabin <adam@chabin.eu>
+Build-Depends: debhelper-compat (= 13),
+               golang-any (>= 1.21),
+               golang-gopkg-yaml.v3-dev,
+               golang-github-charmbracelet-bubbletea-dev,
+               golang-github-charmbracelet-lipgloss-dev,
+               golang-github-charmbracelet-bubbles-dev
+Standards-Version: 4.6.2
+Homepage: https://github.com/adamchabin/fanctl
+
+Package: fanctl
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Advanced Linux fan control daemon and TUI client
+ fanctl provides a daemon (fanctld) to dynamically control fan speeds
+ based on hardware temperature sensors and customizable curves,
+ along with an interactive TUI client for configuration and monitoring.
