@@ -1,0 +1,3 @@
+_build/fanctld usr/local/bin/
+_build/fanctl usr/local/bin/
+fanctld.service lib/systemd/system/

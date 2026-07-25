@@ -1,0 +1,5 @@
+fanctl (v0.1) unstable; urgency=medium
+
+  * Release version v0.1 with client-server architecture, API sync, and debian build scripts.
+
+ -- Adam Chabin <4974033+adamchabin@users.noreply.github.com>  Sat, 25 Jul 2026 12:00:00 +0200
