@@ -21,7 +21,8 @@ jobs:
       - name: Install build dependencies
         run: |
           apt-get update
-          apt-get install -y debhelper dpkg-dev golang-any git
+          apt-get install -y dpkg-dev devscripts equivs
+          mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends -y' --remove debian/control
 
       - name: Build Debian package
         run: |
